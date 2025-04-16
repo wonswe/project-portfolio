@@ -1,6 +1,12 @@
 :root {
     --color-accent: #5eead4;
     --color-highlight: #e2e8f0;
+    --background-accent: rgba(45, 212, 191, .1);
+}
+
+html {
+    scroll-behavior: smooth;
+    /* 대박... 이런게 있다니 */
 }
 
 * {
@@ -165,7 +171,7 @@ section h2,
 .tag {
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
-    background: rgba(45, 212, 191, .1)
+    background: var(--background-accent);
 }
 
 .tag p {
@@ -246,4 +252,36 @@ section h2,
 
 .project-archive-link:hover::after {
     background: var(--color-accent);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* align items to the start of the flex container */
+}
+
+footer p {
+    font-size: 0.9rem;
+
+}
+
+.scroll-to-top {
+    text-decoration: none;
+    color: var(--color-accent);
+    background: var(--background-accent);
+    padding: 0 0.75rem;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+    transition-duration: 200ms;
+}
+
+.scroll-to-top:hover {
+    opacity: 0.6;
+
 }
