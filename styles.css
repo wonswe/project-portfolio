@@ -201,6 +201,7 @@ section h2,
     text-decoration: none;
     transition-duration: 200ms;
     margin-right: auto;
+    /* auto margin, width takes up only the necessary width of the element */
 }
 
 .project-archive-link span {
@@ -214,10 +215,15 @@ section h2,
 .project-archive-link::after {
     content: '';
     position: absolute;
-    /* fixes itself to a nearest parent element */
+    /* fixes itself in context of a nearest parent element */
     left: 0;
     width: 100%;
-    height: 1.5px;
+    height: 2px;
     bottom: 0;
+    background: transparent;
+    transition-duration: 200ms;
+}
+
+.project-archive-link:hover::after {
     background: var(--color-accent);
 }
